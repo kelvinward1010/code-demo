@@ -9,12 +9,16 @@ function getCoffee(){
 }
 
 function singSong() {
-    console.log('Start singing...');
+    // setTimeout(() => {
+    //     console.log('Start singing...');
+    // },2000)
 }
 
 function doAsynStuff(callback){
     setTimeout(() => {
         callback();
+        //console.log('Coffee is here...')
+        console.log('Start singing...');
     },2000)
 }
 

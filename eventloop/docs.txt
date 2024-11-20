@@ -1,0 +1,23 @@
+Event loop là một cơ chế cơ bản trong JavaScript và Node.js
+giúp quản lý các tác vụ bất đồng bộ (asynchronous tasks). 
+Nó cho phép JavaScript thực thi mã, thu thập và xử lý các sự kiện, 
+thực hiện các tác vụ đồng bộ và bất đồng bộ một cách có trật tự. 
+Dưới đây là một số trường hợp cụ thể xảy ra trong event loop:
+
+1. Call Stack:
+  - Khi bạn chạy một đoạn code JavaScript, các hàm sẽ được đẩy vào Call Stack theo thứ tự gọi.
+  - Call Stack hoạt động theo nguyên tắc LIFO (Last In, First Out): hàm nào được gọi sau sẽ được thực hiện trước.
+2. Web APIs:
+  - Các tác vụ không đồng bộ như setTimeout, fetch API, DOM events sẽ được gửi đến Web APIs để xử lý.
+  - Trong khi Web APIs đang xử lý, Call Stack sẽ tiếp tục thực hiện các tác vụ khác nếu có.
+3. Callback Queue:
+  - Khi Web APIs hoàn thành công việc, callback function của chúng sẽ được đưa vào Callback Queue.
+  3.1 Microtask Queue: Các tác vụ bất đồng bộ như Promise.then(), Promise.catch(), và Promise.finally(). 
+  3.2 Task Queue:
+    - Timers: setTimeout(), setInterval() - Được thêm vào hàng đợi và thực hiện sau khi call stack trống rỗng.
+    - I/O Tasks: Các tác vụ nhập/xuất như yêu cầu HTTP, đọc/ghi file.
+    - Event Handlers: Các sự kiện từ giao diện người dùng như click, input, etc.
+  Độ ưu tiên luôn: Microtask Queue > Task Queue.
+4. Event Loop:
+  - Event Loop sẽ liên tục kiểm tra xem Call Stack có rỗng hay không.
+  - Nếu Call Stack rỗng, Event Loop sẽ lấy một callback từ Callback Queue và đẩy vào Call Stack để thực hiện.
