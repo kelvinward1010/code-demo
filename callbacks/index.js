@@ -12,7 +12,6 @@ greet('kelvin', sayGoodbye);
 
 
 //Callback hell
-
 function fetchUserData(userId, callback) {
     setTimeout(() => {
         const userData = { name: 'John Doe', age: 30 };
