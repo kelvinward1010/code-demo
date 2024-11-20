@@ -51,3 +51,23 @@ app.get("/blocking", async (req, res) => {
 app.listen(port, () => {
     console.log(`App running on http://localhost:${port}`)
 })
+
+
+/*
+Khởi tạo workerPromise:
+Mảng workerProsmise được tạo để chứa các Promise do hàm createWorker trả về.
+
+Tạo và thêm các Worker:
+Một vòng lặp chạy THREAD_COUNT lần (ở đây là 4 lần) để tạo ra 4 worker.
+Mỗi worker được tạo ra bằng cách gọi hàm createWorker() và Promise của nó được thêm vào workerProsmise.
+
+Chờ đợi tất cả các Worker hoàn thành:
+await Promise.all(workerProsmise) được sử dụng để chờ đợi tất cả các Promise trong workerProsmise hoàn thành.
+thread_results sẽ là một mảng chứa kết quả từ tất cả các worker.
+
+Tính tổng kết quả:
+Biến total được tính bằng cách cộng tất cả các kết quả từ các worker lại với nhau.
+
+Gửi kết quả tới client:
+Cuối cùng, kết quả tổng (total) được gửi lại client với status code 200. 
+*/
