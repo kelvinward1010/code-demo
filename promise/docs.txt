@@ -1,0 +1,8 @@
+Promise là một khái niệm quan trọng trong JavaScript được giới thiệu trong ECMAScript 2015 (ES6) 
+để xử lý các tác vụ bất đồng bộ một cách dễ hiểu và quản lý hơn. Promise cung cấp một cách để 
+làm việc với các tác vụ bất đồng bộ mà không cần phải dựa vào callback, giúp mã dễ đọc và bảo trì hơn.
+
+Các thành phần chính của Promise
+    Pending (Chờ xử lý): Trạng thái ban đầu của Promise. Khi Promise đang chờ được giải quyết hoặc bị từ chối.
+    Resolved (Đã giải quyết): Trạng thái khi tác vụ bất đồng bộ hoàn thành thành công và Promise trả về một giá trị.
+    Rejected (Bị từ chối): Trạng thái khi tác vụ bất đồng bộ thất bại và Promise trả về một lý do từ chối (error).

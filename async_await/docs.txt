@@ -1,0 +1,15 @@
+async và await là các từ khóa trong JavaScript được giới thiệu trong ECMAScript 2017 (ES8). 
+Chúng cung cấp một cách tiếp cận rõ ràng và dễ đọc hơn để làm việc với các thao tác bất đồng bộ, 
+thay thế cho việc sử dụng Promise chaining.
+
+
+1. Từ khóa async:
+    Khi một hàm được định nghĩa với từ khóa async, hàm đó sẽ luôn trả về một Promise.
+    Nếu hàm trả về một giá trị, thì Promise này sẽ được giải quyết (resolved) với giá trị đó.
+    Nếu hàm ném ra một lỗi hoặc trả về một Promise bị từ chối (rejected), thì Promise của hàm sẽ bị từ chối với lý do tương ứng.
+
+2. Từ khóa await:
+    Từ khóa await chỉ có thể được sử dụng bên trong một hàm async.
+    await tạm dừng việc thực thi của hàm async cho đến khi Promise được giải quyết (resolved) hoặc từ chối (rejected).
+    Khi Promise được giải quyết, await trả về giá trị của Promise.
+    Nếu Promise bị từ chối, await sẽ ném ra lỗi đó.

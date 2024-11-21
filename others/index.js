@@ -74,8 +74,13 @@ function fetchAll1(){
 fetchAll1();
 
 function fetchAll2(){
-    // const fetch = Promise.
+    const fetch = Promise.allSettled([fetchData2(), fetchData3()]).then((res) => {
+        console.log(res)
+    })
+    console.log(fetch)
 }
+
+fetchAll2();
 
 
 // async function fetchData() {
