@@ -1,0 +1,3 @@
+Web Workers là một API trong trình duyệt web cho phép chạy các đoạn mã JavaScript 
+trong một luồng riêng biệt. Điều này giúp ngăn chặn việc chặn giao diện người dùng 
+khi thực hiện các tác vụ phức tạp và tốn thời gian.

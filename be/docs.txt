@@ -1,0 +1,14 @@
+SharedArrayBuffer là một kiểu dữ liệu trong JavaScript được thiết kế để chia sẻ bộ nhớ 
+giữa các luồng (threads) một cách hiệu quả và an toàn. Điều này rất hữu ích trong các 
+môi trường đa luồng như Web Workers trong trình duyệt hoặc Worker Threads trong Node.js.
+SharedArrayBuffer cho phép nhiều luồng truy cập và chỉnh sửa dữ liệu trong bộ nhớ được 
+chia sẻ mà không phải sao chép dữ liệu, giúp giảm độ trễ và tăng hiệu suất.
+
+Đặc điểm của SharedArrayBuffer
+    1. Chia sẻ Bộ nhớ:
+    - SharedArrayBuffer cho phép tạo một vùng nhớ có thể được chia sẻ giữa nhiều luồng, 
+    tránh sao chép dữ liệu nhiều lần và giảm việc sử dụng bộ nhớ.
+
+    2. Truy cập Đồng thời:
+    - Các luồng có thể truy cập và cập nhật dữ liệu trong SharedArrayBuffer đồng thời, 
+    giúp tăng hiệu suất cho các tác vụ đòi hỏi xử lý nhiều.

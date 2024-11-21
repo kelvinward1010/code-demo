@@ -1,9 +1,9 @@
 const express = require("express");
-const {Worker} = require('worker_threads')
+const {Worker, isMainThread} = require('worker_threads')
 
 const app = express();
 
-const port = 3333;
+const port = 3000;
 const THREAD_COUNT = 4;
 
 app.get("/", (req, res) => {
@@ -44,6 +44,37 @@ app.get("/blocking", async (req, res) => {
     const total = thread_results[0] + thread_results[1] + thread_results[2] + thread_results[3];
     
     res.status(200).send(`result is: ${total}`)
+})
+
+
+app.get('/shareworker', async (req, res) => {
+    if(isMainThread){
+        const sharedBuffer = new SharedArrayBuffer(1024); // 1024 bytes
+        const sharedArray = new Int32Array(sharedBuffer); 
+
+        for (let i = 0; i < sharedArray.length; i++) { 
+            sharedArray[i] = i; 
+        }
+
+        const worker = new Worker(__filename, {
+            workerData: sharedBuffer
+        })
+
+        worker.on("message", () => {
+            console.log("Worker đã update SharedArrayBuffer")
+            console.log(sharedArray?.slice(0,10))
+        })
+
+        worker.postMessage('Bắt đầu cập nhật');
+    }else{
+        const sharedArray = new Int32Array(workerData);
+        parentPort.on('message', () => { 
+            for (let i = 0; i < sharedArray.length; i++) { 
+                sharedArray[i] *= 2;
+            } 
+            parentPort.postMessage('Đã cập nhật'); 
+        });
+    }
 })
 
 
