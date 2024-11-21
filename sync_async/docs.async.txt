@@ -1,0 +1,6 @@
+Bất đồng bộ (asynchronous) trong JavaScript là khả năng thực hiện các tác vụ mà 
+không chặn luồng chính của chương trình. Điều này có nghĩa là JavaScript có thể 
+bắt đầu một tác vụ (chẳng hạn như một yêu cầu HTTP), tiếp tục thực thi mã trong 
+khi chờ đợi tác vụ đó hoàn thành, và sau đó xử lý kết quả khi nó sẵn sàng. 
+Điều này giúp cải thiện hiệu suất và trải nghiệm người dùng bằng cách không 
+làm ứng dụng bị treo trong khi chờ đợi các tác vụ tốn nhiều thời gian.

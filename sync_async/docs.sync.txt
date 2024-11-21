@@ -1,0 +1,14 @@
+Mã đồng bộ (synchronous code) trong lập trình là loại mã được thực thi theo thứ tự từ trên xuống dưới, từng dòng một, 
+và phải hoàn thành từng dòng mã trước khi chuyển sang dòng tiếp theo. Điều này có nghĩa là chương trình sẽ chờ cho mỗi 
+tác vụ hoàn thành trước khi tiến hành tác vụ tiếp theo, không có sự trễ hoặc tác vụ chạy đồng thời.
+
+Đặc điểm của mã đồng bộ:
+Thứ tự thực thi:
+    Mã đồng bộ được thực thi theo thứ tự tuần tự.
+    Mỗi dòng mã phải hoàn thành trước khi chuyển sang dòng mã tiếp theo.
+
+Chặn luồng chính:
+    Trong quá trình thực thi, mã đồng bộ có thể chặn luồng chính, đặc biệt là khi thực hiện các tác vụ tốn nhiều thời gian như đọc/ghi tệp lớn hoặc truy vấn cơ sở dữ liệu.
+    Điều này có thể làm giảm hiệu suất và gây trễ trong phản hồi giao diện người dùng.
+
+Dễ hiểu và dễ dự đoán: Do sự tuần tự của nó, mã đồng bộ thường dễ hiểu và dự đoán hơn.
